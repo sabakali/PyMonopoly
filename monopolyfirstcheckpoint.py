@@ -24,217 +24,167 @@ global whichPlayer
 whichPlayer = 0
 
 def Property(name,color,whattype,owner,cost,rent,mortgage,housecost,hotelcost,houses,h1,h2,h3,h4,h5):
-    name = name
-    color = color
-    owner = owner
-    cost = int(cost)
-    rent = int(rent)
-    mortgage = int(mortgage)
-    housecost = int(housecost)
-    hotelcost = int(hotelcost)
-    houses = int(houses)
-    h1 = int(h1) #house 1
-    h2 = int(h2) #house 2
-    h3 = int(h3) #house 3
-    h4 = int(h4) #house 4
-    h5 = int(h5) #hotel
     return name,cost,whattype
 
 
 def Railroad(name,owner,whattype,cost,rent):
-    name = name
-    owner = owner
-    cost = int(cost)
-    rent = int(rent)
 
     return name,cost,whattype
 
 def Utilities(name,owner,whattype,cost,rent):
-    name = name
-    owner = owner
-    cost = int(cost)
-    rent = int(rent)
-    
     return name,cost,whattype
     
 
 def CommunityChest(name):
-    name = name
-
     return name
 
 def Chance(name):
-    name = name
-    
     return name
 
 
 def Tax(name,whattype,tax):
-    name = name
-    tax = int(tax)
-
     return name,whattype,tax
 
 def FreeBlock(name):
-    name = name
-
     return name
 
 
 def CommunityChestCard(description,move,collect,pay,payperhouse,getoutofjailfree,gotojail,collect50):
-    description = description
-    move = int(move)
-    collect = int(collect)
-    pay = int(pay)
-    payperhouse = int(payperhouse)
-    getoutofjailfree = getoutofjailfree
-    gotojail = gotojail
-    collect50 = collect50
-
     return description
 
 def ChanceCard(description,move,collect,pay,payperhouse,getoutofjailfree,gotojail,moveback):
-    description = description
-    move = int(move)
-    collect = int(collect)
-    pay = int(pay)
-    payperhouse = int(payperhouse)
-    getoutofjailfree = getoutofjailfree
-    gotojail = gotojail
-    moveback = moveback
-
     return description
 
 
 def Board():
     
-    global BoardList
-    global cclist
-    global chancelist
+    global PropertyList #list containing all properties on the board
+    global cclist #list containing all community chest cards
+    global chancelist #list containing all chance cards
 
-    BoardList = []
+    PropertyList = [] #first initialize this list 
 
     fb1 = FreeBlock('GO!')
-    BoardList.append(fb1)
+    PropertyList.append(fb1)
     
     ma = Property('Mediterranean Avenue','brown','Property','bank',60,2,50,50,30,0,10,30,90,160,250)
-    BoardList.append(ma)
+    PropertyList.append(ma)
     
     cc1 = CommunityChest('Community Chest')
-    BoardList.append(cc1)
+    PropertyList.append(cc1)
     
     ba = Property('Baltic Avenue','brown','Property','bank',60,4,30,50,50,0,20,60,180,320,450)
-    BoardList.append(ba)
+    PropertyList.append(ba)
 
     it1 = Tax('Income Tax','Tax',200)
-    BoardList.append(it1)
+    PropertyList.append(it1)
 
     rr = Railroad('Reading Railroad','bank','Railroad',200,25)
-    BoardList.append(rr)
+    PropertyList.append(rr)
     
     oa = Property('Oriental Avenue','light blue','Property','bank',100,6,50,50,50,0,30,90,270,400,550)
-    BoardList.append(oa)
+    PropertyList.append(oa)
 
     c1 = Chance('Chance')
-    BoardList.append(c1)
+    PropertyList.append(c1)
 
     va = Property('Vermont Avenue','light blue','Property','bank',100,6,50,50,50,0,30,90,270,400,550)
-    BoardList.append(va)
+    PropertyList.append(va)
 
     ca = Property('Connecticut Avenue','Property','light blue','bank',120,8,60,50,50,0,40,100,300,450,600)
-    BoardList.append(ca)
+    PropertyList.append(ca)
 
     fb2 = FreeBlock('Just Visiting Jail')
-    BoardList.append(fb2)
+    PropertyList.append(fb2)
 
     scp = Property('St. Charles Place','pink','Property','bank',140,10,70,100,100,0,50,150,450,625,750)
-    BoardList.append(scp)
+    PropertyList.append(scp)
 
     ec = Utilities('Electric Company','bank','Utility',150,0)
-    BoardList.append(ec)
+    PropertyList.append(ec)
 
     sa = Property('States Avenue','pink','Property','bank',140,10,70,100,100,0,50,150,450,625,750)
-    BoardList.append(sa)
+    PropertyList.append(sa)
 
     va1 = Property('Virginia Avenue','pink','Property','bank',160,12,80,100,100,0,60,180,500,700,900)
-    BoardList.append(va1)
+    PropertyList.append(va1)
 
     pr = Railroad('Pennsylvania Railroad','bank','Railroad',200,25)
-    BoardList.append(pr)
+    PropertyList.append(pr)
 
     sjp = Property('St. James Place','orange','Property','bank',180,14,90,100,100,0,70,200,550,750,950)
-    BoardList.append(sjp)
+    PropertyList.append(sjp)
 
     cc2 = CommunityChest('Community Chest')
-    BoardList.append(cc2)
+    PropertyList.append(cc2)
 
     ta = Property('Tennessee Avenue','orange','Property','bank',180,14,90,100,100,0,70,200,550,750,950)
-    BoardList.append(ta)
+    PropertyList.append(ta)
 
     nya = Property('New York Avenue','orange','Property','bank',200,16,100,100,100,0,80,220,600,800,100)
-    BoardList.append(nya)
+    PropertyList.append(nya)
 
     fb3 = FreeBlock('Free Parking')
-    BoardList.append(fb3)
+    PropertyList.append(fb3)
     
     ka = Property('Kentucky Avenue','red','Property','bank',220,18,110,150,150,0,90,250,700,875,1050)
-    BoardList.append(ka)
+    PropertyList.append(ka)
 
     c2 = Chance('Chance')
-    BoardList.append(c2)
+    PropertyList.append(c2)
 
     ia = Property('Indiana Avenue','red','Property','bank',220,18,110,150,150,0,90,250,700,875,1050)
-    BoardList.append(ia)
+    PropertyList.append(ia)
 
     ia1 = Property('Illinois Avenue','red','Property','bank',240,20,120,150,150,0,100,300,750,925,1100)
-    BoardList.append(ia1)
+    PropertyList.append(ia1)
 
     bando = Railroad('B&O Railroad','bank','Railroad',200,25)
-    BoardList.append(bando)
+    PropertyList.append(bando)
 
     aa = Property('Atlantic Avenue','yellow','Property','bank',260,22,130,150,150,0,110,330,800,975,1150)
-    BoardList.append(aa)
+    PropertyList.append(aa)
 
     va2 = Property('Ventnor Avenue','yellow','Property','bank',260,22,130,150,150,0,110,330,800,975,1150)
-    BoardList.append(va2)
+    PropertyList.append(va2)
 
     ww = Utilities('Water Works','bank','Utility',150,0)
-    BoardList.append(ww)
+    PropertyList.append(ww)
 
     mg = Property('Marvin Gardens','yellow','Property','bank',280,24,140,150,150,0,120,360,850,1025,1200)
-    BoardList.append(mg)
+    PropertyList.append(mg)
 
     fb4 = FreeBlock('Go To Jail')
-    BoardList.append(fb4)
+    PropertyList.append(fb4)
 
     pa = Property('Pacific Avenue','green','Property','bank',300,26,150,200,200,0,130,390,900,1100,1275)
-    BoardList.append(pa)
+    PropertyList.append(pa)
 
     nca = Property('North Carolina Avenue','green','Property','bank',300,26,150,200,200,0,130,390,900,1100,1275)
-    BoardList.append(nca)
+    PropertyList.append(nca)
 
     cc3 = CommunityChest('Community Chest')
-    BoardList.append(cc3)
+    PropertyList.append(cc3)
 
     pa1 = Property('Pennsylvania Avenue','green','Property','bank',320,28,160,200,200,0,150,450,1000,1200,1400)
-    BoardList.append(pa1)
+    PropertyList.append(pa1)
     
     sl = Railroad('Short Line','bank','Railroad',200,25)
-    BoardList.append(sl)
+    PropertyList.append(sl)
 
     c3 = Chance('Chance')
-    BoardList.append(c3)
+    PropertyList.append(c3)
 
     pp = Property('Park Place','dark blue','Property','bank',350,35,175,200,200,0,175,500,1100,1300,1500)
-    BoardList.append(pp)
+    PropertyList.append(pp)
 
     lt = Tax('Luxury Tax','Tax',100)
-    BoardList.append(lt)
+    PropertyList.append(lt)
 
     b = Property('Boardwalk','dark blue','Property','bank',400,50,200,200,200,0,200,600,1400,1700,2000)
-    BoardList.append(b)
+    PropertyList.append(b)
 
-    cclist = []
+    cclist = [] #first initialize this list
 
     ccdesc1 = "GRAND OPERA OPENING. COLLECT $50 FROM EVERY PLAYER"
     cc1 = CommunityChestCard(ccdesc1,0,0,0,0,0,0,50)
@@ -297,7 +247,7 @@ def Board():
     cclist.append(cc15)
     
 
-    chancelist = []
+    chancelist = [] #first initialize this list
 
     cdesc1 = "ADVANCE TO ILLINOIS AVE. IF YOU PASS GO, COLLECT $200.00"
     c1 = ChanceCard(cdesc1,25,0,0,0,0,0,0)
@@ -361,356 +311,338 @@ def Board():
 
 
 
-    return BoardList
+    return PropertyList
     return cclist
     return chancelist
 
     
 Board()
 
-def Taxblock(t):
+def Taxblock(tb): #function defined if player lands on a Tax block
 
-    if BoardList[position][1] == 'Tax':
+    if PropertyList[position][1] == 'Tax': #if player lands on Tax block
         
         global money
-        if money > 0:
-            money = money - BoardList[position][2]
-            print 'You have to pay Tax of '+str(BoardList[position][2])
-            print 'Player'+"'"+'s '+'Money : ',money
+        if money > 0: #money should be greater than 0
+            money = money - PropertyList[position][2] #deduct money and pay tax
+            print 'You have to pay Tax of '+str(PropertyList[position][2])
+            print 'Player '+str(whichPlayer)+"'s "+'Money : ',money
         else:
             print 'You do not have enough money !'
 
-def addProperty(newProperty):
 
-    if BoardList[position][2] == 'Property':
-        otherPlayers()
-        checkifbuy = raw_input('Do you want to buy '+BoardList[position][0]+' for $'+str(BoardList[position][1])+' ?')
-        if checkifbuy == 'Yes':
+def addProperty(newProperty): #function defined if player wants to buy a property
+
+    if PropertyList[position][2] == 'Property': #if player lands on Property
+        
+        checkifbuy = raw_input('Do you want to buy '+PropertyList[position][0]+' for $'+str(PropertyList[position][1])+' ?') #ask player if they want to buy this property
+        if checkifbuy == 'Yes': #if they say yes
 
             global position
-
             
             global money
-            if money > 0:
-                money = money - BoardList[position][1]
-                print 'Player'+"'"+'s '+'Money : ',money
+            if money > 0: #money should be greater than 0
+                money = money - PropertyList[position][1] #deduct money and pay to buy this property
+                print 'Player '+str(whichPlayer)+"'s "+'Money : ',money
             else:
                 print 'You do not have enough money !'
 
             global proplist
-            proplist.append(BoardList[position][0])
+            proplist.append(PropertyList[position][0]) #append this recently bought property to proplist
 
-            print 'Property List : ',proplist
+            print 'Player '+str(whichPlayer)+"'s "+'Property List : ',proplist
             
         elif checkifbuy == 'No':
-            print 'Property List : ',proplist
+            print 'Player '+str(whichPlayer)+"'s "+'Property List : ',proplist
         
 
     
 
-def addRailroad(newRailroad):
+def addRailroad(newRailroad): #function defined if player wants to buy a railroad
 
-    if BoardList[position][2] == 'Railroad':
-        otherPlayers()
-        checkifbuy = raw_input('Do you want to buy '+BoardList[position][0]+' for $'+str(BoardList[position][1])+' ?')
-        if checkifbuy == 'Yes':
+    if PropertyList[position][2] == 'Railroad': #if player lands on Railroad
+       
+        checkifbuy = raw_input('Do you want to buy '+PropertyList[position][0]+' for $'+str(PropertyList[position][1])+' ?') #ask player if they want to buy this railroad
+        if checkifbuy == 'Yes': #if they say yes
             
             global position
 
             global money
-            if money > 0:
-                money = money - BoardList[position][1]
-                print 'Player'+"'"+'s '+'Money : ',money
+            if money > 0: #money should be greater than 0
+                money = money - PropertyList[position][1] #deduct money and pay to buy this railroad
+                print 'Player '+str(whichPlayer)+"'s "+'Money : ',money
             else:
                 print 'You do not have enough money !'
                 
             global raillist
-            raillist.append(BoardList[position][0])
+            raillist.append(PropertyList[position][0]) #append this recently bought railroad to raillist
 
-            print 'Railroad List : ',raillist
+            print 'Player '+str(whichPlayer)+"'s "+'Railroad List : ',raillist
         elif checkifbuy == 'No':
-            print 'Railroad List : ',raillist
+            print 'Player '+str(whichPlayer)+"'s "+'Railroad List : ',raillist
         
 
     
 
-def addUtility(newUtility):
+def addUtility(newUtility): #function defined if player wants to buy a utility
 
-    if BoardList[position][2] == 'Utility':
-        otherPlayers()
-        checkifbuy = raw_input('Do you want to buy '+BoardList[position][0]+' for $'+str(BoardList[position][1])+' ?')
-        if checkifbuy == 'Yes':
+    if PropertyList[position][2] == 'Utility': #if player lands on Utility
+        
+        checkifbuy = raw_input('Do you want to buy '+PropertyList[position][0]+' for $'+str(PropertyList[position][1])+' ?') #ask player if they want to buy this utility
+        if checkifbuy == 'Yes': #if they say yes
         
             global position
 
             global money
-            if money > 0:
-                money = money - BoardList[position][1]
-                print 'Player'+"'"+'s ' 'Money : ',money
+            if money > 0: #money should be greater than 0
+                money = money - PropertyList[position][1] #deduct money and pay to buy this utility
+                print 'Player '+str(whichPlayer)+"'s "+'Money : ',money
             else:
                 print 'You do not have enough money !'
 
             global utilist
-            utilist.append(BoardList[position][0])
+            utilist.append(PropertyList[position][0]) #append this recently bought utility to utilist
 
-            print 'Utility List : ',utilist
+            print 'Player '+str(whichPlayer)+"'s "+'Utility List : ',utilist
         if checkifbuy == 'No':
-            print 'Utility List : ',utilist
+            print 'Player '+str(whichPlayer)+"'s "+'Utility List : ',utilist
 
             
 
-def LandingonCC(cc):
+def LandingonCC(cc): #function defined if players lands on community chest
 
-    if BoardList[position] == 'Community Chest':
-        randomcc = random.choice(cclist)
-        print randomcc
+    if PropertyList[position] == 'Community Chest': #if player lands on community chest
+        randomcc = random.choice(cclist) #randomly select a card from community chest cards
+        print randomcc #print it on screen
 
-        if cclist.index(randomcc) == 0:
+        if cclist.index(randomcc) == 0: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 50
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
             
-        elif cclist.index(randomcc) == 1:
+        elif cclist.index(randomcc) == 1: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 25
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 2:
+        elif cclist.index(randomcc) == 2: #if the card is at this index, do whatever it says on the card
             global position
             position = 0
-            print 'Position Now : ',BoardList[0]
+            print 'Player '+str(whichPlayer)+"'s "+'Position Now : ',PropertyList[0]
             
             global money
             money = money + 200
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 3:
+        elif cclist.index(randomcc) == 3: #if the card is at this index, do whatever it says on the card
             global money
             money = money - 100
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 4:
+        elif cclist.index(randomcc) == 4: #if the card is at this index, do whatever it says on the card
             global money
             money = money - 50
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 5:
+        elif cclist.index(randomcc) == 5: #if the card is at this index, do whatever it says on the card
             jailcard = 1
 
-        elif cclist.index(randomcc) == 6:
+        elif cclist.index(randomcc) == 6: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 45
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 7:
+        elif cclist.index(randomcc) == 7: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 100
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 8:
+        elif cclist.index(randomcc) == 8: #if the card is at this index, do whatever it says on the card
             print 'You are Gone to Jail !'
 
-        elif cclist.index(randomcc) == 9:
+        elif cclist.index(randomcc) == 9: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 100
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 10:
+        elif cclist.index(randomcc) == 10: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 10
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 11:
+        elif cclist.index(randomcc) == 11: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 100
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 12:
+        elif cclist.index(randomcc) == 12: #if the card is at this index, do whatever it says on the card
             global money
             money = money - 40
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 13:
+        elif cclist.index(randomcc) == 13: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 200
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif cclist.index(randomcc) == 14:
+        elif cclist.index(randomcc) == 14: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 20
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
             
             
-def LandingonChance(c):
+def LandingonChance(c): #function defined if player lands on chance
 
-    if BoardList[position] == 'Chance':
-        randomcc = random.choice(chancelist)
-        print randomcc
+    if PropertyList[position] == 'Chance':
+        randomcc = random.choice(chancelist) #randomly select a card from chance cards list
+        print randomcc #print it on screen
 
-        if chancelist.index(randomcc) == 0:
+        if chancelist.index(randomcc) == 0: #if the card is at this index, do whatever it says on the card
             global position
             position = 24
-            print 'Position Now : ',BoardList[24]
+            print 'Player '+str(whichPlayer)+"'s "+'Position Now : ',PropertyList[24]
             
-        elif chancelist.index(randomcc) == 1:
+        elif chancelist.index(randomcc) == 1: #if the card is at this index, do whatever it says on the card
             global money
             money = money - 40
-            print 'Player'+"'"+'s ' 'Money Now : ',money 
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money 
 
-        elif chancelist.index(randomcc) == 2:
+        elif chancelist.index(randomcc) == 2: #if the card is at this index, do whatever it says on the card
             jailcard = 1
 
-        elif chancelist.index(randomcc) == 3:
+        elif chancelist.index(randomcc) == 3: #if the card is at this index, do whatever it says on the card
             global position
             position = 0
-            print 'Position Now : ',BoardList[0]
+            print 'Player '+str(whichPlayer)+"'s "+'Position Now : ',PropertyList[0]
 
-        elif chancelist.index(randomcc) == 4:
+        elif chancelist.index(randomcc) == 4: #if the card is at this index, do whatever it says on the card
             global position
             position = 11
-            print 'Position Now : ',BoardList[11]
+            print 'Player '+str(whichPlayer)+"'s "+'Position Now : ',PropertyList[11]
 
-        elif chancelist.index(randomcc) == 5:
+        elif chancelist.index(randomcc) == 5: #if the card is at this index, do whatever it says on the card 
             global money
             money = money - 15
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif chancelist.index(randomcc) == 6:
+        elif chancelist.index(randomcc) == 6: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 50
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif chancelist.index(randomcc) == 7:
+        elif chancelist.index(randomcc) == 7: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 100
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif chancelist.index(randomcc) == 8:
+        elif chancelist.index(randomcc) == 8: #if the card is at this index, do whatever it says on the card
             global position
             position = 39
-            print 'Position Now : ',BoardList[39]
+            print 'Player '+str(whichPlayer)+"'s "+'Position Now : ',PropertyList[39]
 
-        elif chancelist.index(randomcc) == 9:
+        elif chancelist.index(randomcc) == 9: #if the card is at this index, do whatever it says on the card
             global money
             money = money - 12
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif chancelist.index(randomcc) == 10:
+        elif chancelist.index(randomcc) == 10: #if the card is at this index, do whatever it says on the card
             global position
             position = 5
-            print 'Position Now : ',BoardList[5]
+            print 'Player '+str(whichPlayer)+"'s "+'Position Now : ',PropertyList[5]
 
-        elif chancelist.index(randomcc) == 11:
+        elif chancelist.index(randomcc) == 11: #if the card is at this index, do whatever it says on the card
             global position
             position = position - 3
-            print 'Position Now : ',BoardList[position]
+            print 'Player '+str(whichPlayer)+"'s "+'Position Now : ',PropertyList[position]
 
-        elif chancelist.index(randomcc) == 12:
+        elif chancelist.index(randomcc) == 12: #if the card is at this index, do whatever it says on the card
             global money
             money = money + 150
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif chancelist.index(randomcc) == 13:
+        elif chancelist.index(randomcc) == 13: #if the card is at this index, do whatever it says on the card
             global money
             money = money - 25
-            print 'Player'+"'"+'s ' 'Money Now : ',money
+            print 'Player '+str(whichPlayer)+"'s "+'Money Now : ',money
 
-        elif chancelist.index(randomcc) == 14:
+        elif chancelist.index(randomcc) == 14: #if the card is at this index, do whatever it says on the card
             print 'You are Gone to Jail !'
-            
 
-def otherPlayers():
-
-    #howmanyPlayers = raw_input('How Many Players are Playing?')
-##    global howmanyPlayers
-##
-##    global whichPlayer
-##    
-##    #print whichPlayer, "wp before"
-##
-##    whichPlayer = (whichPlayer + 1) % int(howmanyPlayers)
-##
-##    #print whichPlayer, "wp after"
-
-    
-    print 'Player '+str(whichPlayer)+"'s Turn"
 
 def updatePlayer():
+    print '                                   '
     global howmanyPlayers
     global whichPlayer  
-    whichPlayer = (whichPlayer + 1) % int(howmanyPlayers)
+    whichPlayer = (whichPlayer + 1) % int(howmanyPlayers) #update players after each turn
+    print 'Player '+str(whichPlayer)+"'s Turn"
+    
  
 
 
-def ActualGame():
+def ActualGame(): #this function is for the actual game to run
 
     global howmanyPlayers
 
-    howmanyPlayers = raw_input('How Many Players are Playing?')
+    howmanyPlayers = raw_input('How Many Players are Playing?') #ask user how many players are playing
 
     
-    def Player():
+    def Player(): #function defined to represent a player
 
-        global money
-        
+        global money #this is global because it is being used everywhere
 
-        global proplist
+        global proplist #this is global property list that player buys because it is being used everywhere
        
-        global railist
+        global railist #this is global railroad list that player buys because it is being used everywhere
 
-        global utilist
+        global utilist #this is global utilist list that player buys because it is being used everywhere
 
-        addProperty(BoardList[position])
+        addProperty(PropertyList[position]) #call this function to buy a property on this position on board
 
-        addRailroad(BoardList[position])
+        addRailroad(PropertyList[position]) #call this function to buy a railroad on this position on board
     
-        addUtility(BoardList[position])
+        addUtility(PropertyList[position]) #call this function to buy utility on this position on board
 
-        LandingonCC(BoardList[position])
+        LandingonCC(PropertyList[position]) #call this function when player lands on community chest on this position on board
 
-        LandingonChance(BoardList[position])
+        LandingonChance(PropertyList[position]) #call this function when players lands on chance on this position on board
 
-        Taxblock(BoardList[position])
-        
-
-    #initialize variables
-    otherPlayers()
+        Taxblock(PropertyList[position]) #call this function when player lands on tax block on this position on board
 
         
-    global position
-    position = 0
-    print 'Initial Position : ',BoardList[0]
-    print 'Player'+"'"+'s '+'Initial Money : ',1500
+    global position #this is global because it is being used everywhere
+    position = 0 #initialy the position is zero
+    print 'Initial Position : ',PropertyList[0]
+    
+    print 'Player '+str(whichPlayer)+"'s"+' Initial Money : ',1500 #display players intial money
+
 
     Game = True
-    #repeat until game ends
-    while Game == True:
+    while Game == True: #repeat until game ends
     
-        dice1 = random.randint(1,6)
-        print 'Dice1 : ',dice1
-        dice2 = random.randint(1,6)
-        print 'Dice2 : ',dice2
+        dice1 = random.randint(1,6) #dice 1 being rolled
+        print 'Dice1 : ',dice1 #print result on screen
+        dice2 = random.randint(1,6) #dice 2 being rolled
+        print 'Dice2 : ',dice2 #print result on screen
 
-        total = dice1 + dice2
-        print 'Total : ',total
+        total = dice1 + dice2 #add result of both dices 
+        print 'Total : ',total #print the total of both dices on screen
 
-        position = position + total
+        position = position + total #update position
 
-        if position > 39:
-            position = position - 40
+        if position > 39: #if position is bigger than 39, because there are 40 blocks on monopoly
+            position = position - 40 #update position
             
 
-        print 'Player'+"'"+'s ' 'Position : ',BoardList[position]
+        print 'Player '+str(whichPlayer)+"'s"+ ' Position : ',PropertyList[position] #print players position on board
 
-        Player()
+        Player() #call player function
 
-        if money <= 0:
+        if money <= 0: #check if money is positive
             print 'You do not have enough money ! You lost the Game!'
-            Game = False
-        #print 'here',otherPlayers()
-        otherPlayers()
-        #print 'end',otherPlayers()
-        updatePlayer()
+            Game = False #end game
+
+
+        updatePlayer() #call this function to update player after each turn
 
 ActualGame()
 
